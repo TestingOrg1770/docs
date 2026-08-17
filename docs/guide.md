@@ -14,8 +14,6 @@ title: "Guide"
 
 ###### header 6
 
-
-
 TESTING 
 
 <Check>
@@ -29,4 +27,3 @@ TESTING
 <Danger>
 
 </Danger>
-
