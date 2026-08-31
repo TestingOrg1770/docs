@@ -1,0 +1,62 @@
+# DocMind navigation — edit and re-upload to bulk-link repository files.
+#
+# • Order here defines the sidebar order (top to bottom).
+# • Move a path out of "unlinked" into "navigation" to link it.
+# • Anything in scope that you remove from this file is DELETED on apply.
+# • page: <repo path or existing page slug>   api: <repo path or existing spec slug>
+# • Nest with "group:" inside a "tab:". The "apiReference:" rail holds api specs,
+#   page docs, and "group:" folders (a folder holds one spec plus its docs).
+# • A "separator: <label>" is a static sidebar heading (not a page or group).
+# • A "group:" accepts optional "icon:", "expanded: true|false" and "hidden: true|false".
+# • A "page:" accepts an optional "icon:" (sidebar icon name) alongside its "title:".
+# • A "tab:" accepts an optional "mode: changelog|release_notes" — omit it for a
+#   normal documentation Tab. "release_notes" holds one page per release; a
+#   "changelog" Tab renders a single timeline.
+# • "roles: [admin, editor]" controls who can see a tab/group/page — "*" means
+#   everyone. A "tab:" always shows its roles (every Tab has one); on a
+#   "group:"/"page:" the line is only present when explicitly set — removing
+#   it means "inherit from its parent", it does not reset access to "*".
+# • "id:" is a stable identity DocMind manages — LEAVE IT ALONE. It is what makes
+#   renaming a tab/group a rename (keeping its pages) rather than deleting it and
+#   creating a new one. Omit it only when hand-writing a brand-new entry.
+# • "version", "scope" and "source" are metadata — leave them untouched.
+version: 1
+scope: all
+source:
+  branch: develop
+navigation:
+  - id: cms4hbbeq000607qsivqxcfmw
+    tab: Getting Started
+    roles:
+      - "*"
+    children:
+      - id: cms4hcc2k000707qs0wovuvv8
+        page: docs/guide.md
+        title: Guide
+      - id: cmsen0r8z010007quadtz00ed
+        group: group test
+        expanded: false
+        hidden: false
+        children:
+          - id: cmsen14x9010107qusrc8kpuj
+            group: nested group
+            expanded: false
+            hidden: false
+            children:
+              - id: cmsen26ri010207qu6i40ox4a
+                group: nested nested
+                expanded: false
+                hidden: false
+                children: []
+  - id: cms4iqa4c000i07qsp73or1er
+    tab: changelog
+    mode: changelog
+    roles:
+      - "*"
+    children: []
+  - id: cms4it0qv000j07qss918ckff
+    tab: Release 2151
+    mode: release_notes
+    roles:
+      - "*"
+    children: []
